@@ -1,0 +1,12 @@
+.user__info {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 580px) {
+    .user__info {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+}

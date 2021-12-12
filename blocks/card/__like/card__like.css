@@ -1,0 +1,21 @@
+.card__like {
+    display: block;
+    width: 22px;
+    height: 19px;
+    background-image: url('../../../images/like.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #FFFFFF;
+    border: none;
+    padding: 0;
+}
+
+.card__like:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.card__like:active {
+    background-image: url('../../../images/Union.svg');
+    opacity: 1;
+}

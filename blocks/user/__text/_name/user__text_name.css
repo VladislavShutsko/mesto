@@ -1,0 +1,22 @@
+.user__text_name {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 580px) {
+    .user__text_name {
+        font-size: 27px;
+        line-height: 33px;
+        text-align: center;
+        margin-bottom: 14px;
+    }
+}

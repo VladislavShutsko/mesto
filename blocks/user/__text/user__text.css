@@ -1,0 +1,13 @@
+.user__text {
+    max-width: 336px;
+    max-height: 73px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 18px;
+}
+
+@media screen and (max-width: 580px) {
+    .user__text {
+        margin-right: 10px;
+    }
+}
