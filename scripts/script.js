@@ -28,16 +28,25 @@ function setDefaultPopupValue() {
 
 popupOpenButton.addEventListener('click', setDefaultPopupValue);
 
-let saveButton = document.querySelector(".popup__save");
-
-function saveName(event) {
-    event.preventDefault();
+let formElement = document.querySelector('.popup__form');
 
 
-    userName.textContent = nameInput.value;
-    userProfession.textContent = jobInput.value;
+
+// Обработчик «отправки» формы, хотя пока
+// она никуда отправляться не будет
+function formSubmitHandler(evt) {
+    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+    // Так мы можем определить свою логику отправки.
+    // О том, как это делать, расскажем позже.
+
+    // Получите значение полей jobInput и nameInput из свойства value
+    let nameInputValue = nameInput.value;
+    let jobInputValue = jobInput.value;
+    userName.textContent = nameInputValue;
+    userProfession.textContent = jobInputValue;
     togglePopoup();
-
-
 }
-saveButton.addEventListener('click', saveName);
+
+// Прикрепляем обработчик к форме:
+// он будет следить за событием “submit” - «отправка»
+formElement.addEventListener('submit', formSubmitHandler);
