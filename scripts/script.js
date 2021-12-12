@@ -30,9 +30,14 @@ popupOpenButton.addEventListener('click', setDefaultPopupValue);
 
 let saveButton = document.querySelector(".popup__save");
 
-function saveName() {
+function saveName(event) {
+    event.preventDefault();
+
+
     userName.textContent = nameInput.value;
     userProfession.textContent = jobInput.value;
     togglePopoup();
+
+
 }
 saveButton.addEventListener('click', saveName);
