@@ -3,8 +3,8 @@ const popupCloseButton = document.querySelector('.popup__close');
 
 const popup = document.querySelector('.popup');
 
-let userName = document.querySelector('.user__text_name');
-let userProfession = document.querySelector('.user__text_profession');
+let userName = document.querySelector('.user__name');
+let userProfession = document.querySelector('.user__profession');
 
 let nameInput = document.querySelector('.popup__name');
 let jobInput = document.querySelector('.popup__profession');
