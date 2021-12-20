@@ -1,6 +1,6 @@
 .card__text {
     display: block;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 900;
@@ -11,4 +11,5 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 250px;
+    margin: 25px 0 31px;
 }

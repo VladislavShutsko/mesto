@@ -6,7 +6,7 @@
     line-height: 29px;
     letter-spacing: 0em;
     text-align: left;
-    margin: 34 0 54px 0;
+    margin: 34px 0 54px 0;
     width: 100%;
 }
 
@@ -14,6 +14,6 @@
     .popup__header {
         font-size: 18px;
         line-height: 22px;
-        margin: 25 0 75px 0;
+        margin: 25px 0 75px 0;
     }
 }

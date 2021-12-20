@@ -6,29 +6,28 @@ const popup = document.querySelector('.popup');
 let userName = document.querySelector('.user__name');
 let userProfession = document.querySelector('.user__profession');
 
-let nameInput = document.querySelector('.popup__name');
-let jobInput = document.querySelector('.popup__profession');
+let nameInput = document.querySelector('.popup__input_name');
+let jobInput = document.querySelector('.popup__input_job');
 
+let formElement = document.querySelector('.popup__form');
 
 function togglePopoup() {
+    setDefaultPopupValue();
     popup.classList.toggle('popup_opened');
 }
-popupOpenButton.addEventListener('click', togglePopoup);
-popupCloseButton.addEventListener('click', togglePopoup);
-
 
 
 function setDefaultPopupValue() {
 
 
-    nameInput.setAttribute('value', userName.textContent);
-    jobInput.setAttribute('value', userProfession.textContent);
+    nameInput.value = userName.textContent;
+    jobInput.value = userProfession.textContent;
 
 }
 
-popupOpenButton.addEventListener('click', setDefaultPopupValue);
 
-let formElement = document.querySelector('.popup__form');
+
+
 
 
 
@@ -47,6 +46,7 @@ function formSubmitHandler(evt) {
     togglePopoup();
 }
 
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
+
+popupOpenButton.addEventListener('click', togglePopoup);
+popupCloseButton.addEventListener('click', togglePopoup);
 formElement.addEventListener('submit', formSubmitHandler);
