@@ -25,5 +25,8 @@
     .popup__save {
         height: 46px;
         margin-bottom: 25px;
+        font-family: Inter;
+        font-size: 14px;
+        line-height: 17px;
     }
 }
