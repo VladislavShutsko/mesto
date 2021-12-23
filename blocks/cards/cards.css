@@ -7,3 +7,9 @@
     justify-items: center;
     margin: 0 auto 66px;
 }
+
+@media screen and (max-width: 580px) {
+    .cards {
+        margin: 0 auto 48px;
+    }
+}
