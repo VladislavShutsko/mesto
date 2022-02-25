@@ -90,7 +90,7 @@ editFormElement.addEventListener('submit', editPopupSubmit);
 const addPopupOpenButton = document.querySelector('.profile__add');
 const addPopupCloseButton = document.querySelector('.popup__close_type_add');
 
-const addPopup = document.querySelector('.popup__type_add');
+const addPopup = document.querySelector('.popup_type_add');
 
 
 
@@ -182,7 +182,7 @@ function handleDelete(evt) {
     itemElement.remove();
 }
 
-const picturePopup = document.querySelector(".popup__type_picture");
+const picturePopup = document.querySelector(".popup_type_picture");
 
 const pictureOpenButton = document.querySelector(".card__image");
 const pictureCloseButton = document.querySelector(".popup__close_type_picture");
