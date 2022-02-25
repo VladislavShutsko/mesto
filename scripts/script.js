@@ -1,7 +1,7 @@
 const editPopupOpenButton = document.querySelector('.user__edit');
 const editPopupCloseButton = document.querySelector('.popup__close_type_edit');
 
-const editPopup = document.querySelector('.popup__type_edit');
+const editPopup = document.querySelector('.popup_type_edit');
 
 let userName = document.querySelector('.user__name');
 let userProfession = document.querySelector('.user__profession');
