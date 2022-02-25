@@ -1,0 +1,6 @@
+.popup__phrase_container {
+    display: flex;
+    max-width: 291px;
+    padding-top: 10px;
+    max-height: 15px;
+}
