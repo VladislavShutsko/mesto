@@ -210,7 +210,7 @@ function pictureOpen(evt) {
     const cardImage = itemElement.querySelector(".card__image");
     const cardText = itemElement.querySelector(".card__text");
     const popupImage = document.querySelector(".popup__image");
-    const popupText = document.querySelector(".popup__phrase_container");
+    const popupText = document.querySelector(".popup__text");
     popupImage.src = cardImage.src;
     popupText.textContent = cardText.textContent;
     openPicturePopup();
