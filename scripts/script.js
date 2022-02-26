@@ -3,15 +3,33 @@ const editPopupCloseButton = document.querySelector('.popup__close_type_edit');
 
 const editPopup = document.querySelector('.popup_type_edit');
 
-let userName = document.querySelector('.user__name');
-let userProfession = document.querySelector('.user__profession');
+const userName = document.querySelector('.user__name');
+const userProfession = document.querySelector('.user__profession');
 
-let editNameInput = document.querySelector('.popup__input_field_name');
-let editJobInput = document.querySelector('.popup__input_field_job');
+const editNameInput = document.querySelector('.popup__input_field_name');
+const editJobInput = document.querySelector('.popup__input_field_job');
 
-let editFormElement = document.querySelector('.popup__form_type_edit');
+const editFormElement = document.querySelector('.popup__form_type_edit');
+
+const addPopupOpenButton = document.querySelector('.profile__add');
+const addPopupCloseButton = document.querySelector('.popup__close_type_add');
+
+const addPopup = document.querySelector('.popup_type_add');
+const picturePopup = document.querySelector(".popup_type_picture");
+
+const pictureOpenButton = document.querySelector(".card__image");
+const pictureCloseButton = document.querySelector(".popup__close_type_picture");
 
 
+
+const addNameInput = document.querySelector('.popup__input_image-name');
+const addLinkInput = document.querySelector('.popup__input_image-link');
+
+const addFormElement = document.querySelector('.popup__form_type_add');
+
+const cardTemplate = document.querySelector(".card__template").content;
+const cardsList = document.querySelector(".cards");
+const addSubmit = document.querySelector(".popup__form_type_add");
 
 const initialCards = [{
         name: 'Архыз',
@@ -39,17 +57,27 @@ const initialCards = [{
     }
 ];
 
+function openPopup(item) {
+
+    item.classList.add('popup_opened');
+
+}
+
+function closePopup(item) {
+
+    item.classList.remove('popup_opened');
+}
 
 //Edit popup open and closing
 function openEditPopup() {
     setEditDefaultPopupValue();
-    editPopup.classList.add('popup_opened');
+    openPopup(editPopup);
 
 }
 
 function closeEditPopup() {
 
-    editPopup.classList.remove('popup_opened');
+    closePopup(editPopup);
 }
 
 function setEditDefaultPopupValue() {
@@ -87,32 +115,20 @@ editFormElement.addEventListener('submit', editPopupSubmit);
 
 
 // Add popup functionality
-const addPopupOpenButton = document.querySelector('.profile__add');
-const addPopupCloseButton = document.querySelector('.popup__close_type_add');
 
-const addPopup = document.querySelector('.popup_type_add');
-
-
-
-let addNameInput = document.querySelector('.popup__input_image-name');
-let addLinkInput = document.querySelector('.popup__input_image-link');
-
-let addFormElement = document.querySelector('.popup__form_type_add');
-
-const cardTemplate = document.querySelector(".card__template").content;
-const cardsList = document.querySelector(".cards");
-const addSubmit = document.querySelector(".popup__form_type_add");
 
 
 function openAddPopup() {
 
-    addPopup.classList.add('popup_opened');
+    openPopup(addPopup);
+    addNameInput.value = "";
+    addLinkInput.value = "";
 
 }
 
 function closeAddPopup() {
 
-    addPopup.classList.remove('popup_opened');
+    closePopup(addPopup);
 
 }
 
@@ -122,8 +138,7 @@ function closeAddPopup() {
 addPopupOpenButton.addEventListener('click', openAddPopup);
 addPopupCloseButton.addEventListener('click', closeAddPopup);
 
-
-function renderItem(item) {
+function createCard(item) {
     const itemElement = cardTemplate.cloneNode(true);
 
     itemElement.querySelector(".card__image").src = item.link;
@@ -131,8 +146,14 @@ function renderItem(item) {
     likeButtonHandle(itemElement);
     deleteButtonHandle(itemElement);
     pictureOpenHandle(itemElement);
+    return itemElement;
+}
 
+function renderItem(item) {
+
+    const itemElement = createCard(item);
     cardsList.prepend(itemElement);
+
     closeAddPopup();
 }
 
@@ -182,21 +203,17 @@ function handleDelete(evt) {
     itemElement.remove();
 }
 
-const picturePopup = document.querySelector(".popup_type_picture");
-
-const pictureOpenButton = document.querySelector(".card__image");
-const pictureCloseButton = document.querySelector(".popup__close_type_picture");
 
 
 function openPicturePopup() {
 
-    picturePopup.classList.add('popup_opened');
+    openPopup(picturePopup);
 
 }
 
 function closePicturePopup() {
 
-    picturePopup.classList.remove('popup_opened');
+    closePopup(picturePopup);
 
 }
 
