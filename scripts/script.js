@@ -30,6 +30,8 @@ const addFormElement = document.querySelector('.popup__form_type_add');
 const cardTemplate = document.querySelector(".card__template").content;
 const cardsList = document.querySelector(".cards");
 const addSubmit = document.querySelector(".popup__form_type_add");
+const popupImage = document.querySelector(".popup__image");
+const popupText = document.querySelector(".popup__text");
 
 const initialCards = [{
         name: 'Архыз',
@@ -96,8 +98,8 @@ function editPopupSubmit(evt) {
     // О том, как это делать, расскажем позже.
 
     // Получите значение полей jobInput и nameInput из свойства value
-    let nameInputValue = editNameInput.value;
-    let jobInputValue = editJobInput.value;
+    const nameInputValue = editNameInput.value;
+    const jobInputValue = editJobInput.value;
     userName.textContent = nameInputValue;
     userProfession.textContent = jobInputValue;
     closeEditPopup();
@@ -143,9 +145,10 @@ function createCard(item) {
 
     itemElement.querySelector(".card__image").src = item.link;
     itemElement.querySelector(".card__text").textContent = item.name;
+    itemElement.querySelector(".card__text").alt = item.name;
     likeButtonHandle(itemElement);
     deleteButtonHandle(itemElement);
-    pictureOpenHandle(itemElement);
+    handlePictureOpen(itemElement);
     return itemElement;
 }
 
@@ -168,7 +171,7 @@ renderItems(initialCards);
 function addPopupSubmit(evt) {
     evt.preventDefault();
 
-    let item = [{ name: "", link: "" }];
+    const item = [{ name: "", link: "" }];
     item.name = addNameInput.value;
     item.link = addLinkInput.value;
 
@@ -217,18 +220,18 @@ function closePicturePopup() {
 
 }
 
-function pictureOpenHandle(itemElement) {
-    itemElement.querySelector(".card__image").addEventListener("click", pictureOpen);
+function handlePictureOpen(itemElement) {
+    itemElement.querySelector(".card__image").addEventListener("click", openPicture);
 }
 
-function pictureOpen(evt) {
+function openPicture(evt) {
     evt.preventDefault();
     const itemElement = evt.target.closest(".card");
     const cardImage = itemElement.querySelector(".card__image");
     const cardText = itemElement.querySelector(".card__text");
-    const popupImage = document.querySelector(".popup__image");
-    const popupText = document.querySelector(".popup__text");
+
     popupImage.src = cardImage.src;
+    popupImage.alt = cardText.textContent;
     popupText.textContent = cardText.textContent;
     openPicturePopup();
 }
